@@ -1,0 +1,18 @@
+header{
+  background:black;
+  color:white;
+  padding:10px;
+}
+
+main{
+  flex-grow:1;
+}
+
+footer{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  height:50px;
+  background:black;
+  color:white;
+}

@@ -13,9 +13,7 @@ class TablePage extends Component {
   }
 
   handleChange = (e) => {
-    if (parseInt(e.target.value) >= 0) {
-      this.setState({ [e.target.name]: parseInt(e.target.value) })
-    }
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   handleSubmit = () => {
@@ -36,11 +34,11 @@ class TablePage extends Component {
             </Form.Group>
             <Form.Group controlId="formBirthRate">
               <Form.Label>Enter Birth Rate</Form.Label>
-              <Form.Control onChange={(e) => { this.handleChange(e) }} name="birthRate" type="number" value={this.state.birthRate} />
+              <Form.Control onChange={(e) => { this.handleChange(e) }} name="birthRate" type="number" step=".0001" value={this.state.birthRate} />
             </Form.Group>
             <Form.Group controlId="formDeathRate">
               <Form.Label>Enter Death Rate</Form.Label>
-              <Form.Control onChange={(e) => { this.handleChange(e) }} name="deathRate" type="number" value={this.state.deathRate} />
+              <Form.Control onChange={(e) => { this.handleChange(e) }} name="deathRate" type="number" step=".0001" value={this.state.deathRate} />
             </Form.Group>
             <Form.Group controlId="formYearsForward">
               <Form.Label>Enter how far forward you want to see</Form.Label>

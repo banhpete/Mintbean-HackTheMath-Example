@@ -7,6 +7,12 @@ const BarChart = ({ currentPop, birthRate, deathRate, yearsForward }) => {
     title: {
       text: "Population Growth"
     },
+    axisX: {
+      title: "Year"
+    },
+    axisY: {
+      title: "Population"
+    },
     data: [{
       type: "column",
       dataPoints: []
@@ -14,7 +20,7 @@ const BarChart = ({ currentPop, birthRate, deathRate, yearsForward }) => {
   }
 
   for (let i = 0; i < yearsForward; i++) {
-    options.data[0].dataPoints.push({ label: i, y: Math.floor(currentPop * Math.exp((birthRate - deathRate) * i)) })
+    options.data[0].dataPoints.push({ label: i.toString(), y: Math.floor(currentPop * Math.exp((birthRate - deathRate) * i)) })
   }
 
   return (
